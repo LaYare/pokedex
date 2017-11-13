@@ -9,6 +9,9 @@ import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import * as Actions from '../actions/index';
 
+
+let pokeCatch = new Array();
+let pokemon = JSON.parse(localStorage.getItem('pokemonJSON'));
 class App extends Component {
   constructor(props) {
     super(props);
@@ -42,6 +45,33 @@ class App extends Component {
     let pokede = this.props.pokedex.pokedex.filter((names) => names.name == value);
     this.setState({results: pokede});
   }
+
+  handleCatch = event => {
+    let number = event.target.id;
+    document.getElementById(number).classList.add('card__catch--active');
+    let catchs;
+    const datas = this.props.pokedex.pokedex;
+    for (let i = 0; i < datas.length; i++) {
+      if (number === datas[i].num) {
+        catchs = datas[i].num;
+      }
+    }
+    localStorage.setItem('pokemonCatch', JSON.stringify(catchs));
+    let pokemon = JSON.parse(localStorage.getItem('pokemonCatch'));
+    pokeCatch.push(pokemon);
+    localStorage.setItem('pokemonJSON', JSON.stringify(pokeCatch));
+  }
+
+  componentDidUpdate = () => {
+    let id;
+    let count = pokemon.length;
+    console.log(count);
+    for (let i = 0; i < count; i++) {
+      console.log('esto aldks');
+      id = pokemon[i];
+      document.getElementById(id).classList.add('card__catch--active');
+    }
+  }
   render() {
     return (
       <Grid fluid>
@@ -64,7 +94,7 @@ class App extends Component {
                 floatingLabelText="Type 'r', case insensitive"
                 filter={AutoComplete.caseInsensitiveFilter}
                 dataSource={this.state.names}
-                maxSearchResults={8}
+                maxSearchResults={15}
                 onClick={this.handleData}
                 onUpdateInput={this.handleSearch}
               />
@@ -85,6 +115,8 @@ class App extends Component {
                 candy={itemPokemon.candy_count}
                 egg={itemPokemon.egg}
                 wOne={itemPokemon.weaknesses[0]}
+                catchs={this.handleCatch}
+                id={itemPokemon.num}
                 />
             );
           }) :
@@ -101,6 +133,8 @@ class App extends Component {
                 candy={itemPokemon.candy_count}
                 egg={itemPokemon.egg}
                 wOne={itemPokemon.weaknesses[0]}
+                catchs={this.handleCatch}
+                id={itemPokemon.num}
                 />
             );
           })

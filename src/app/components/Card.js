@@ -44,6 +44,8 @@ class Card extends Component {
               </Col>
             </Row>
           </Col>
+          <div className="card__catch" onClick={this.props.catchs} id={this.props.id}>
+          </div>
         </Row>
       </Col>
     );
@@ -59,7 +61,9 @@ Card.propTypes = {
   weight: PropTypes.string,
   candy: PropTypes.number,
   egg: PropTypes.string,
-  wOne: PropTypes.string
+  wOne: PropTypes.string,
+  catchs: PropTypes,
+  id: PropTypes.string
 };
 
 export default Card;

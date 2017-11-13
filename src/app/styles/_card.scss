@@ -30,7 +30,7 @@
     }
 
     &--img {
-      background-image: url('assets/images/forest.png');
+      background-image: url('assets/images/forest-1.png');
       background-size: cover;
       border-radius: 10px;
       border: 2px solid $grey;
@@ -72,5 +72,20 @@
         margin-right: 5px;
       }
     }
+  }
+
+  &__catch {
+    background-image: url('assets/images/catch.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    margin-left: 360px;
+    margin-top: 110px;
+  }
+
+  &__catch--active{
+    background-image: url('assets/images/pokeball.png');
   }
 }

@@ -5,10 +5,22 @@
   margin-left: 1px;
   margin-right: 1px;
   font-family: "Comics";
-  color: $lemon-green;
-  background-color: $red;
+  color: $white;
+  background-color: $card-background;
   box-shadow: -5px 6px 9px -2px $red-shadow;
   padding: 70px 15px;
+
+  &__content {
+    margin-top: 20em;
+
+    @media only screen and (max-width : 480px) {
+      margin-top: 14em;
+    }
+
+    @media (min-width : 481px) and (max-width : 768px) {
+      margin-top: 12em;
+    }
+  }
 
   &__avatar {
     background-color: $light-grey;
@@ -16,24 +28,12 @@
     padding-bottom: 40px;
     border-radius: 10px;
 
-    &::after{
-      content: '';
-      width: 0;
-      height: 0;
-      position: absolute;
-      margin-left: -100px;
-      margin-top: 20px;
-      border-right: 10px solid transparent;
-      border-top: 10px solid transparent;
-      border-left: 10px solid $red;
-      border-bottom: 10px solid $red;
-    }
-
     &--img {
       background-image: url('assets/images/forest-1.png');
       background-size: cover;
       border-radius: 10px;
       border: 2px solid $grey;
+      text-align: center;
     }
 
     &__button {
@@ -41,10 +41,60 @@
       border-radius: 10px;
       background-color: $dark-red;
       position: absolute;
+      margin-top: 10px;
+      margin-left: 10px;
     }
 
     &__horn {
       position: absolute;
+      margin-top: 10px;
+      margin-left: 20px;
+
+      @media only screen and (max-width : 480px) {
+        margin-left: 150px;
+      }
+
+      @media only screen and (max-width : 320px) {
+        margin-left: 110px;
+      }
+
+      @media (min-width : 481px) and (max-width : 768px) {
+        margin-left: 190px;
+      }
+    }
+
+    &__horn--second {
+      margin-left: 50px;
+
+      @media only screen and (max-width : 480px) {
+        margin-left: 180px;
+      }
+
+      @media only screen and (max-width : 320px) {
+        margin-left: 130px
+      }
+
+      @media (min-width : 481px) and (max-width : 768px) {
+        margin-left: 220px;
+      }
+    }
+
+    &__number {
+      margin-bottom: -40px;
+      padding-top: 10px;
+      font-size: 2em;
+    }
+  }
+
+  &__description{
+    @media only screen and (max-width : 480px) {
+      margin-top: 80px;
+      padding-left: 10px;
+    }
+
+    @media (min-width : 481px) and (max-width : 768px) {
+      margin-top: 60px;
+      padding-left: 20px;
     }
   }
 
@@ -83,9 +133,23 @@
     position: absolute;
     margin-left: 360px;
     margin-top: 110px;
+
+    @media only screen and (max-width : 480px) {
+      margin-left: 215px;
+      margin-top: 200px;
+    }
+
+    @media only screen and (max-width : 320px) {
+      margin-left: 165px;
+    }
+
+    @media (min-width : 481px) and (max-width : 768px) {
+      margin-left: 250px;
+      margin-top: 320px;
+    }
   }
 
   &__catch--active{
-    background-image: url('assets/images/pokeball.png');
+    background-image: url('assets/images/pokeball-1.png');
   }
 }

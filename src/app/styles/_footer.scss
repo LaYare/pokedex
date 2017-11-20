@@ -1,0 +1,44 @@
+.footer {
+  height: 250px;
+  color: $white;
+  width: 100vw;
+  margin-left: -32px;
+  text-align: center;
+  background-image: url('assets/images/grass.png');
+  background-position: 90% 100%;
+
+  h2 {
+    font-family: "Pokemon-bold";
+    font-size: 2em;
+    -webkit-text-stroke: 2px $dark-blue;
+    -moz-text-stroke: 2px $dark-blue;
+    -o-text-stroke: 2px $dark-blue;
+    -ms-text-stroke: 2px $dark-blue;
+    padding-top: 10px;
+    @media only screen and (max-width : 480px) {
+      font-size: 30px;
+    }
+  }
+
+  &__images {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 30px;
+
+    @media only screen and (max-width : 480px) {
+      img {
+        width: 47px;
+        height: 47px;
+      }
+    }
+
+    @media (min-width : 481px) and (max-width : 768px) {
+      img {
+        width: 75px;
+        height: 75px;
+      }
+    }
+  }
+}

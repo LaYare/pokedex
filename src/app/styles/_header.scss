@@ -8,6 +8,7 @@
   padding-right: 40px;
   background-color: rgba(38,38,38,0.5);
   position: fixed;
+  z-index: 3;
   box-shadow: -4px 6px 9px -2px $black;
 
   @media only screen and (max-width : 480px) {

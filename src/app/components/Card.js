@@ -15,27 +15,27 @@ class Card extends Component {
               <img src="../assets/images/icon.png" className="card__avatar__horn"/>
               <img src="../assets/images/icon.png" className="card__avatar__horn card__avatar__horn--second"/>
             </div>
-            <div className="card__avatar__number">Número: {this.props.number}</div>
+            <div className="card__avatar__number">Number: {this.props.number}</div>
           </Col>
           <Col xs={12} sm={12} md={6} lg={6} className="card__description">
             <Row className="card__description--row">
               <Col xs={6} sm={6} md={6} lg={6} className="card__description__column">
                 <ul>
-                  <li>Nombre: {this.props.name}</li>
-                  <li>Tipo:
+                  <li>Name: {this.props.name}</li>
+                  <li>Type:
                     <ol>
                       <li>{this.props.typeOne}</li>
                     </ol>
                   </li>
-                  <li>Atura: {this.props.height}</li>
-                  <li>Peso: {this.props.weight}</li>
+                  <li>Height: {this.props.height}</li>
+                  <li>Weight: {this.props.weight}</li>
                 </ul>
               </Col>
               <Col xs={6} sm={6} md={6} lg={6} className="card__description__column">
                 <ul>
-                  <li>Caramelos: {this.props.candy}</li>
-                  <li>Huevo: {this.props.egg}</li>
-                  <li>Devilidades:
+                  <li>Candies: {this.props.candy}</li>
+                  <li>Egg: {this.props.egg}</li>
+                  <li>Weaknesses:
                     <ol>
                       <li>{this.props.wOne}</li>
                     </ol>

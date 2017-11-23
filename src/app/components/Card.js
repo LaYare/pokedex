@@ -11,7 +11,7 @@ class Card extends Component {
               <div className="card__avatar--img">
                 <img src={this.props.image}/>
               </div>
-              <div className="card__avatar__button"></div>
+              <div className="card__avatar__button" onClick={this.props.talk} id={this.props.talkId}></div>
               <img src="../assets/images/icon.png" className="card__avatar__horn"/>
               <img src="../assets/images/icon.png" className="card__avatar__horn card__avatar__horn--second"/>
             </div>
@@ -63,6 +63,8 @@ Card.propTypes = {
   egg: PropTypes.string,
   wOne: PropTypes.string,
   catchs: PropTypes,
+  talk: PropTypes,
+  talkId: PropTypes.string,
   id: PropTypes.string
 };
 

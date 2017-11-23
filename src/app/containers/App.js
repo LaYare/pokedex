@@ -82,6 +82,16 @@ class App extends Component {
       document.getElementById(id).classList.add('card__catch--active');
     }
   }
+
+  handleTalk = event => {
+    let number = parseInt(event.target.id);
+    let ids = number - 1;
+    let array = this.props.pokedex.pokedex[ids];
+    let valor = `${array.name}, pokemon tipo ${array.type[0]}, pesa ${array.weight}, mide ${array.height}, su debilidad son los pokemon tipo ${array.weaknesses[0]} `;
+    let msg = new SpeechSynthesisUtterance(valor);
+    window.speechSynthesis.speak(msg);
+  }
+
   render() {
     const actions = [
       <FlatButton
@@ -96,7 +106,7 @@ class App extends Component {
         <Row center="lg" between="lg">
           <Col xs={12} sm={12} md={12} lg={12}>
             <header className="header">
-              <h1 className="header__title">Pokédex</h1>
+              <h1 className="header__title" onClick={this.handleTalk}>Pokédex</h1>
               <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
                 <AutoComplete
                   floatingLabelText="Put the name of your pokemon ..."
@@ -144,6 +154,8 @@ class App extends Component {
                 wOne={itemPokemon.weaknesses[0]}
                 catchs={this.handleCatch}
                 id={itemPokemon.name}
+                talk={this.handleTalk}
+                talkId={itemPokemon.num}
                 />
             );
           }) :
@@ -162,6 +174,8 @@ class App extends Component {
                 wOne={itemPokemon.weaknesses[0]}
                 catchs={this.handleCatch}
                 id={itemPokemon.name}
+                talk={this.handleTalk}
+                talkId={itemPokemon.num}
                 />
             );
           })
